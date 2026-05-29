@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ctotgdaggxw55"]
+
+[ext_resource type="Script" uid="uid://bysltkfw2km4x" path="res://Shitfuck.cs" id="1_oqqmd"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6ymau"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oqqmd"]
+
+[node name="shitfuck" type="CharacterBody3D" unique_id=1104267214]
+script = ExtResource("1_oqqmd")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1497280796]
+transform = Transform3D(1, 0, 0, 0, 0.5416055, 0.8406328, 0, -0.8406328, 0.5416055, -0.0020217896, 3.314655, 2.245329)
+projection = 1
+size = 6.603
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1317102100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020217896, 0, 0)
+mesh = SubResource("CapsuleMesh_6ymau")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1714715213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020217896, 0, 0)
+shape = SubResource("CapsuleShape3D_oqqmd")
