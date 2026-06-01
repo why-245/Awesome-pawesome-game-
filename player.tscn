@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://ctotgdaggxw55"]
+[gd_scene format=3 uid="uid://bgr01ion8wy4k"]
 
-[ext_resource type="Script" uid="uid://bysltkfw2km4x" path="res://Shitfuck.cs" id="1_oqqmd"]
+[ext_resource type="Script" uid="uid://csrjtrnkdjyx1" path="res://Player.cs" id="1_oqqmd"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6ymau"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oqqmd"]
 
-[node name="shitfuck" type="CharacterBody3D" unique_id=1104267214]
+[node name="Player" type="CharacterBody3D" unique_id=1104267214]
 script = ExtResource("1_oqqmd")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1497280796]
@@ -21,3 +21,6 @@ mesh = SubResource("CapsuleMesh_6ymau")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1714715213]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020217896, 0, 0)
 shape = SubResource("CapsuleShape3D_oqqmd")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=2139331396]
+unique_name_in_owner = true

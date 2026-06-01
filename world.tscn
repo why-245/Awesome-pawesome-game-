@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bv4gh6twoohon"]
+[gd_scene format=3 uid="uid://bgbr4f34o0574"]
 
-[ext_resource type="PackedScene" uid="uid://ctotgdaggxw55" path="res://shitfuck.tscn" id="1_2rvfh"]
+[ext_resource type="PackedScene" uid="uid://bgr01ion8wy4k" path="res://Player.tscn" id="1_2rvfh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2rvfh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,7 +19,7 @@ glow_enabled = true
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_h2ho5"]
 
-[node name="fallout 5 new vegas 2 76" type="Node3D" unique_id=654905743]
+[node name="World" type="Node3D" unique_id=654905743]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=677175449]
 environment = SubResource("Environment_h2ho5")
@@ -28,7 +28,7 @@ environment = SubResource("Environment_h2ho5")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="shitfuck" parent="." unique_id=1104267214 instance=ExtResource("1_2rvfh")]
+[node name="Player" parent="." unique_id=1104267214 instance=ExtResource("1_2rvfh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1163753887]

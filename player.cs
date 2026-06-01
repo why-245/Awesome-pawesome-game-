@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Shitfuck : CharacterBody3D
+public partial class Player : CharacterBody3D
 {
 	public const float Speed = 5.0f;
 
@@ -27,5 +27,19 @@ public partial class Shitfuck : CharacterBody3D
 
 		Velocity = velocity;
 		MoveAndSlide();
+			
+		if (Input.IsActionJustPressed("shoot")) 
+		{
+			shoot_bullet();
+		}
+	}
+	void shoot_bullet()
+	{
+		var BULLET_3D = GD.Load<PackedScene>("uid://ouiq1b4hjbit");
+		var new_bullet = BULLET_3D.Instantiate();
+		AddChild(new_bullet);
+	
+		((Area3D)new_bullet).GlobalTransform = GetNode<Marker3D>("Marker3D").GlobalTransform;
+	
 	}
 }
