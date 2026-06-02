@@ -30,6 +30,8 @@ public partial class Player : CharacterBody3D
 			
 		if (Input.IsActionJustPressed("shoot")) 
 		{
+			
+			look_at_mouse();
 			shoot_bullet();
 		}
 	}
@@ -54,6 +56,7 @@ public partial class Player : CharacterBody3D
 			var From = camera.ProjectRayOrigin(mouse_position);
 			var To = From + camera.ProjectRayNormal(mouse_position) * ray_length;
 			var mouse_position_on_screen = target_plane.IntersectsRay(From, To);
-			GetNode<Marker3D>("Marker3D").LookAt(mouse_position_on_screen, Vector3.Up, 0);
+			Vector3 w = (Vector3)mouse_position_on_screen;
+			GetNode<Marker3D>("Marker3D").LookAt(vrgdeukijhf, Vector3.Up);
 		}
 }
