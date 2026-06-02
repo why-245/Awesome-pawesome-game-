@@ -57,6 +57,6 @@ public partial class Player : CharacterBody3D
 			var To = From + camera.ProjectRayNormal(mouse_position) * ray_length;
 			var mouse_position_on_screen = target_plane.IntersectsRay(From, To);
 			Vector3 w = (Vector3)mouse_position_on_screen;
-			GetNode<Marker3D>("Marker3D").LookAt(vrgdeukijhf, Vector3.Up);
+			GetNode<Marker3D>("Marker3D").LookAt(w, Vector3.Up);
 		}
 }
