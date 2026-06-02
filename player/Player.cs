@@ -24,17 +24,17 @@ public partial class Player : CharacterBody3D
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, Speed);
 		}
-
 		Velocity = velocity;
 		MoveAndSlide();
+			
 			
 		if (Input.IsActionJustPressed("shoot")) 
 		{
 			shoot_bullet();
-			
-			
 		}
 	}
+	
+	
 	void shoot_bullet()
 	{
 		var BULLET_3D = GD.Load<PackedScene>("uid://ouiq1b4hjbit");
@@ -46,15 +46,14 @@ public partial class Player : CharacterBody3D
 	
 	private const float ray_length = 500.0f;
 	
-	void look_at_mouse()
+	private void look_at_mouse()
 		{
-			var target_plane = new Plane(new Vector3(0,1,0), Position.Y);
+			var target_plane = new Plane(Vector3.Up , Position.Y);
 			var mouse_position = GetViewport().GetMousePosition();
 			var camera = GetNode<Camera3D>("Camera3D");
 			var From = camera.ProjectRayOrigin(mouse_position);
 			var To = From + camera.ProjectRayNormal(mouse_position) * ray_length;
 			var mouse_position_on_screen = target_plane.IntersectsRay(From, To);
-			
 			GetNode<Marker3D>("Marker3D").LookAt(mouse_position_on_screen, Vector3.Up, 0);
 		}
 }
