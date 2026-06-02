@@ -31,6 +31,8 @@ public partial class Player : CharacterBody3D
 		if (Input.IsActionJustPressed("shoot")) 
 		{
 			shoot_bullet();
+			
+			
 		}
 	}
 	void shoot_bullet()
@@ -40,6 +42,19 @@ public partial class Player : CharacterBody3D
 		AddChild(new_bullet);
 	
 		((Area3D)new_bullet).GlobalTransform = GetNode<Marker3D>("Marker3D").GlobalTransform;
-	
 	}
+	
+	private const float ray_length = 500.0f;
+	
+	void look_at_mouse()
+		{
+			var target_plane = new Plane(new Vector3(0,1,0), Position.Y);
+			var mouse_position = GetViewport().GetMousePosition();
+			var camera = GetNode<Camera3D>("Camera3D");
+			var From = camera.ProjectRayOrigin(mouse_position);
+			var To = From + camera.ProjectRayNormal(mouse_position) * ray_length;
+			var mouse_position_on_screen = target_plane.IntersectsRay(From, To);
+			
+			GetNode<Marker3D>("Marker3D").LookAt(mouse_position_on_screen, Vector3.Up, 0);
+		}
 }

@@ -18,7 +18,6 @@ public partial class Bullet3d : Area3D
 		{
 			this.QueueFree();
 		}
-	
-	
 	}
+	
 }

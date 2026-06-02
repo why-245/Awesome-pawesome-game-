@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ouiq1b4hjbit"]
 
-[ext_resource type="Script" uid="uid://2a14dw11th1n" path="res://Bullet3d.cs" id="1_x1nl0"]
+[ext_resource type="Script" uid="uid://2a14dw11th1n" path="res://player/Bullet3d.cs" id="1_x1nl0"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_jocbm"]
 
