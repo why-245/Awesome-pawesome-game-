@@ -23,5 +23,8 @@ mesh = SubResource("CapsuleMesh_6ymau")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020217896, 0, 0)
 shape = SubResource("CapsuleShape3D_oqqmd")
 
-[node name="Marker3D" type="Marker3D" parent="." unique_id=2139331396]
-transform = Transform3D(-4.3711392e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, -0.06335664, 0.069792405, 0.57129097)
+[node name="Node3D" type="Node3D" parent="." unique_id=617023595]
+
+[node name="Marker3D" type="Marker3D" parent="Node3D" unique_id=2139331396]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 1, -0.050428808, 0.069792405, -0.66575545)

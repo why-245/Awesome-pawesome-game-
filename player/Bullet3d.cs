@@ -5,16 +5,15 @@ public partial class Bullet3d : Area3D
 {
 	public const float Speed = 25.0f;
 	public const float range = 45.0f;
-	
-	public float travelled_distance = 0.0f;
+	public float TravelledDistance = 0.0f;
 	
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)
 	{
 		Position += -Transform.Basis.Z * Speed * (float)delta;
-		travelled_distance += Speed * (float)delta;
+		TravelledDistance += Speed * (float)delta;
 		
-		if (travelled_distance > range)
+		if (TravelledDistance > range)
 		{
 			this.QueueFree();
 		}
@@ -22,9 +21,11 @@ public partial class Bullet3d : Area3D
 	
 	private void _on_body_entered(Node3D body)
 	{ 
-		if (body.HasMethod("TakeDamage"))
+		GD.Print("owie");
+		if (body is Enemy enemy)
 		{
-			body.Call("TakeDamage"); 
+			enemy.TakeDamage();
+			GD.Print("Die!!!!!");
 		}
 		QueueFree();
 	}

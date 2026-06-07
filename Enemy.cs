@@ -20,6 +20,7 @@ public partial class Enemy : CharacterBody3D
 		if(Health <= 0)
 		{
 			QueueFree();
+			GD.Print("*_*");
 		}
 	}
 }

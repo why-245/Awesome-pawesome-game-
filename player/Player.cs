@@ -43,7 +43,7 @@ public partial class Player : CharacterBody3D
 		var new_bullet = BULLET_3D.Instantiate();
 		AddChild(new_bullet);
 	
-		((Area3D)new_bullet).GlobalTransform = GetNode<Marker3D>("Marker3D").GlobalTransform;
+		((Area3D)new_bullet).GlobalTransform = GetNode<Marker3D>("Node3D/Marker3D").GlobalTransform;
 	}
 	
 	private void look_at_mouse()
@@ -55,6 +55,6 @@ public partial class Player : CharacterBody3D
 			var To = From + Camera.ProjectRayNormal(MousePosition) * ray_length;
 			var mouse_position_on_screen = TatgetPlane.IntersectsRay(From, To);
 			Vector3 w = (Vector3)mouse_position_on_screen;
-			GetNode<Marker3D>("Marker3D").LookAt(w, Vector3.Up);
+			GetNode<Node3D>("Node3D").LookAt(w, Vector3.Up);
 		}
 }
