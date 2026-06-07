@@ -4,7 +4,7 @@ using System;
 public partial class Player : CharacterBody3D
 {
 	public const float Speed = 5.0f;
-
+	private const float ray_length = 500.0f;
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector3 velocity = Velocity;
@@ -46,16 +46,14 @@ public partial class Player : CharacterBody3D
 		((Area3D)new_bullet).GlobalTransform = GetNode<Marker3D>("Marker3D").GlobalTransform;
 	}
 	
-	private const float ray_length = 500.0f;
-	
 	private void look_at_mouse()
 		{
-			var target_plane = new Plane(Vector3.Up , Position.Y);
-			var mouse_position = GetViewport().GetMousePosition();
-			var camera = GetNode<Camera3D>("Camera3D");
-			var From = camera.ProjectRayOrigin(mouse_position);
-			var To = From + camera.ProjectRayNormal(mouse_position) * ray_length;
-			var mouse_position_on_screen = target_plane.IntersectsRay(From, To);
+			var TatgetPlane = new Plane(Vector3.Up , Position.Y);
+			var MousePosition = GetViewport().GetMousePosition();
+			var Camera = GetNode<Camera3D>("Camera3D");
+			var From = Camera.ProjectRayOrigin(MousePosition);
+			var To = From + Camera.ProjectRayNormal(MousePosition) * ray_length;
+			var mouse_position_on_screen = TatgetPlane.IntersectsRay(From, To);
 			Vector3 w = (Vector3)mouse_position_on_screen;
 			GetNode<Marker3D>("Marker3D").LookAt(w, Vector3.Up);
 		}

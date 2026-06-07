@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bgbr4f34o0574"]
 
 [ext_resource type="PackedScene" uid="uid://bgr01ion8wy4k" path="res://player/Player.tscn" id="1_2rvfh"]
+[ext_resource type="PackedScene" uid="uid://2oqfqxx5b61g" path="res://Enemy.tscn" id="2_2dftf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2rvfh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,7 +26,7 @@ glow_enabled = true
 environment = SubResource("Environment_h2ho5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1125612725]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, -0.00834226, 0.5124438, 0.8586803, -0.49993047, 0.74155337, -0.44740167, -2.840948, 4.39167, -9.170116)
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1104267214 instance=ExtResource("1_2rvfh")]
@@ -39,3 +40,6 @@ mesh = SubResource("PlaneMesh_slu11")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2046327198]
 shape = SubResource("WorldBoundaryShape3D_h2ho5")
+
+[node name="CharacterBody3D" parent="." unique_id=1028918824 instance=ExtResource("2_2dftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6794324, 1, 0.03745699)
